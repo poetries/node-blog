@@ -1,0 +1,54 @@
+<%include partial/head.ejs %>
+<%include partial/header.ejs %>
+<div class="site-content">
+	<div class="container-fluid module-index">
+		<aside class="hidden-sm hidden-xs">
+			<section class="author">
+				<img src="/images/tx.jpg" alt="">
+				<header>ZhangXiong</header>
+				<p>最好的时间是十年前，其次是现在。</p>
+			</section>
+			<section class="follow">
+				<h4>关注</h4>
+				<ul class="list-unstyled list-inline share">
+					<li class="share-item"><a href="http://github.com/zhangxiongcn" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+					<li class="share-item"><a href="mailto:zhangxiongcn@126.com" class="link-leave" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+				</ul>
+			</section>
+			<section class="tag-list">
+				<h4>标签</h4>
+				<% for(var i=0; i<tags.length; i++){ %>
+				<a href="" class="tags"><%= tags[i].title %></a>
+				<% } %>
+			</section>
+		</aside>
+		<div class="content">
+			<div class="posts">
+				<% for(var i=0; i<data.length; i++){ %>
+				<div class="post">
+					<time>
+						<p class="day"><%= data[i].day %></p>
+						<p class="month"><%= data[i].ym %></p>
+					</time>
+					<article>
+						<header>
+							<h1><a href="/article?id=<%= data[i]._id %>" target="_blank"><%= data[i].title %></a></h1>
+							<span>
+								<% for(var j=0; j<data[i].tag.length; j++){ %>
+								<a href="" class="tags"><%= data[i].tag[j] %></a>
+								<% } %>
+							</span>
+						</header>
+						<div class="summary">
+							<img src="../../<%= data[i].cover %>" alt="" width="330" height="213" class="hidden-md hidden-sm hidden-xs">
+							<div class="txt"><%= data[i].summary %></div>
+						</div>
+						<a href="/article?id=<%= data[i]._id %>" class="more btn-hover pull-right" target="_blank">继续阅读</a>
+					</article>
+				</div>
+				<% } %>
+			</div>
+		</div>
+	</div>
+</div>
+<%include partial/foot.ejs %>

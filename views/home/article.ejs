@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title><%= title %></title>
+	<meta name="viewport" content="device-width,initial-scale=1">
+	<link rel="shortcut icon" href="/images/favicon.ico">
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/font-z/iconfont.css">
+	<link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/css/home.css">
+	<link rel="stylesheet" href="/css/markdown.css">
+	<script src="/js/jquery-3.1.0.min.js"></script>
+</head>
+<%include partial/header.ejs %>
+	<div class="article">
+		<div class="blog">
+			<header class="blog-header">
+				<div class="container-fluid">
+					<time class="pull-right"><%= data.wmdy %></time>
+					<h3><%= data.title %></h3>
+					<aside class="hidden-sm hidden-xs">
+						
+					</aside>
+					<p class="tag-list">
+						<% for(var i = 0; i<data.tag.length; i++){ %>
+						<a href="" class="tags"><%= data.tag[i] %></a>
+						<% } %>
+					</p>
+				</div>
+			</header>
+			<div class="container-fluid">
+			<script type="text/javascript" src="/js/markdown.min.js"></script>
+				<div class="content">
+					<article id="md"><%= data.content %></article>
+				</div>
+				<script type="text/javascript">
+					$('#md').html(markdown.toHTML($('#md').text()));
+				</script>
+			</div>
+		</div>
+	</div>
+<%include partial/foot.ejs %>

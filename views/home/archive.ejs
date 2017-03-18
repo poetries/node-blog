@@ -1,0 +1,22 @@
+<%include partial/head.ejs %>
+<%include partial/header.ejs %>
+<body>
+	<div class="container-fluid">
+		<div class="arc-list">
+			<h3>文章列表</h3>
+			<ul>
+				<% for(var i=0;i<data.length;i++){ %>
+				<li>
+					<time><%= data[i].ymd %></time>
+					<div>
+						<a href="/article?id=<%= data[i]._id %>" class="title"><%= data[i].title %></a>
+						<% for(var j=0;j<data[i].tag.length;j++){ %>
+						<a href="" class="tags"><%= data[i].tag[j] %></a>
+						<% } %>
+					</div>
+				</li>
+				<% } %>
+			</ul>
+		</div>
+	</div>
+<%include partial/foot.ejs %>

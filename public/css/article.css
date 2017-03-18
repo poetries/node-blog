@@ -1,0 +1,59 @@
+.article .blog .blog-header {
+  background: linear-gradient(172deg, #415877 0, #415877 15%, #4d85d1 70%);
+  color: white;
+}
+.article .blog .blog-header .container-fluid {
+  position: relative;
+}
+.article .blog .blog-header .container-fluid .tags {
+  border-color: #fff;
+}
+.article .blog .blog-header .container-fluid time {
+  color: #fff;
+  font-size: 14px;
+  font-style: italic;
+  margin-top: 10px;
+}
+.article .blog .blog-header .container-fluid h3 {
+  margin: 50px 0 35px;
+  font-size: 24px;
+}
+.article .blog .blog-header .container-fluid .tag-list {
+  margin-bottom: 10px;
+  margin-left: 270px;
+  min-height: 28px;
+}
+.article .blog .blog-header .container-fluid aside {
+  position: absolute;
+  -webkit-box-shadow: 5px 5px 5px #ccc;
+  -moz-box-shadow: 5px 5px 5px #ccc;
+  -ms-box-shadow: 5px 5px 5px #ccc;
+  -o-box-shadow: 5px 5px 5px #ccc;
+  box-shadow: 5px 5px 5px #ccc;
+}
+.article .blog .blog-header .container-fluid aside .nav-box {
+  font-size: 14px;
+  width: 240px;
+}
+.article .blog .blog-header .container-fluid aside .nav-box ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  background: #fff;
+}
+.article .blog .blog-header .container-fluid aside .nav-box ul li a {
+  display: block;
+  padding: 8px 25px;
+  color: #415776;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.article .blog .blog-header .container-fluid aside .nav-box ul li a:hover {
+  color: #fff;
+  background-color: #4d85d1;
+}
+.article .blog .content {
+  margin-left: 270px;
+  margin-top: 50px;
+}

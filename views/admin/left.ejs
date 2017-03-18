@@ -1,0 +1,108 @@
+<div class="menu">
+	<div class="user-status clearfix">
+		<div class="pull-left">
+			<img src="images/tx.jpg" alt="" class="img-circle">
+		</div>
+		<div class="pull-left">
+			<p>Hello, 张雄 <br> <a href="">在线</a></p>
+		</div>
+	</div>
+
+	<ul class="list-group">
+		<li class="list-group-item">
+			<a href="">
+				<span class="glyphicon glyphicon-dashboard"></span>
+				控制台
+			</a>
+		</li>
+		<li class="list-group-item">
+			<a href="#cats" data-toggle="collapse">
+				<span class="glyphicon glyphicon-th-large"></span>
+				分类
+				<i class="glyphicon glyphicon-chevron-left pull-right"></i>
+			</a>
+			<ul class="list-group collapse" id="cats">
+				<li class="list-group-item">
+					<a href="/admin/cats">
+						<span class="glyphicon glyphicon-list"></span>
+						分类列表
+					</a>
+				</li>
+				<li class="list-group-item">
+					<a href="/admin/cats/add">
+						<span class="glyphicon glyphicon-plus"></span>
+						分类添加
+					</a>
+				</li>
+			</ul>
+		</li>
+		<li class="list-group-item">
+			<a href="#posts" data-toggle="collapse">
+				<span class="glyphicon glyphicon-file"></span>
+				文章
+				<i class="glyphicon glyphicon-chevron-left pull-right"></i>
+			</a>
+			<ul class="list-group collapse" id="posts">
+				<li class="list-group-item">
+					<a href="/admin/posts">
+						<span class="glyphicon glyphicon-list"></span>
+						文章列表
+					</a>
+				</li>
+				<li class="list-group-item">
+					<a href="/admin/posts/add">
+						<span class="glyphicon glyphicon-plus"></span>
+						文章添加
+					</a>
+				</li>
+			</ul>
+		</li>
+		<li class="list-group-item">
+			<a href="#tag" data-toggle="collapse">
+				<span class="glyphicon glyphicon-tag"></span>
+				标签
+				<i class="glyphicon glyphicon-chevron-left pull-right"></i>
+			</a>
+			<ul class="list-group collapse" id="tag">
+				<li class="list-group-item">
+					<a href="/admin/tags">
+						<span class="glyphicon glyphicon-list"></span>
+						标签列表
+					</a>
+				</li>
+				<li class="list-group-item">
+					<a href="/admin/tags/add">
+						<span class="glyphicon glyphicon-plus"></span>
+						标签添加
+					</a>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<script>
+	//注册ul隐藏结束事件
+	$("ul.list-group.collapse").on('hide.bs.collapse',function(){
+		// alert('隐藏完毕');
+		//找到当前ul对应的a标签中的i，将down改成left
+		$(this).prev().find("i").removeClass("glyphicon-chevron-down").addClass("glyphicon-chevron-left");
+
+	});
+
+	//注册ul显示结束事件
+	$("ul.list-group.collapse").on('show.bs.collapse',function(){
+		// alert('显示完毕');
+		//找到当前ul对应的a标签中的 i ，将left改成down
+		$(this).prev().find("i").removeClass("glyphicon-chevron-left").addClass("glyphicon-chevron-down");
+	});
+	setHeight();
+	//窗口大小发生变化
+	$(window).on('resize', function(){
+		// console.log('test');
+		setHeight();
+	});
+
+	function setHeight(){
+		$(".menu").css({'min-height' : $(window).height() - 50});
+	}
+</script>

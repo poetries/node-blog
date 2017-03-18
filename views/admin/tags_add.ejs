@@ -1,0 +1,48 @@
+<%include head.ejs %>
+<%include header.ejs %>
+<%include left.ejs %>
+	<aside class="right-side main">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                标签编辑
+                <small>标签</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="/admin"><i class="fa fa-dashboard"></i> 管理中心</a></li>
+                <li class="/admin/tags"><a href="/admin/tags">标签</a></li>
+                <li class="active">标签编辑</li>
+            </ol>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box">
+                        <form action="/admin/tags/insert" method="post">
+                            <div class="box-header">
+                                <h3 class="box-title"></h3>
+                                <a href="/admin/tags" class="btn btn-default pull-right">标签列表</a>
+                            </div><!-- /.box-header -->
+
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label for="inputTitle">标签标题</label>
+                                    <input type="title" placeholder="标题" id="inputTitle" value="" class="form-control" name="title">
+                                </div>
+
+                            </div><!-- /.box-body -->
+                            <div class="box-footer clearfix">
+                                <button class="btn btn-primary" type="submit">添加</button>
+                            </div><!-- /.box-footer -->
+                        </form>
+
+                    </div><!-- /.box -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+
+        </section><!-- /.content -->
+
+        <%include footer.ejs %>

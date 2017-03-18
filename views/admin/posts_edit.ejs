@@ -1,0 +1,88 @@
+<%include head.ejs %>
+<%include header.ejs %>
+<%include left.ejs %>
+<!-- Right side column. Contains the navbar and content of the page -->
+<aside class="right-side main">
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        文章添加
+        <small>文章</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/admin"><i class="fa fa-dashboard"></i> 管理中心</a></li>
+        <li><a href="/admin/posts">文章</a></li>
+        <li class="active">文章添加</li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box">
+                <form action="/admin/posts/update?id=<%= data._id %>" method="post" enctype="multipart/form-data">
+                    <div class="box-header">
+                        <h3 class="box-title"></h3>
+                        <a href="/admin/posts" class="btn btn-default pull-right">文章列表</a>
+                    </div>
+                    <!-- /.box-header -->
+
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label for="inputCategoryId">文章分类</label>
+                            <select name="cat" id="inputCategoryId" class="form-control">
+                                <option value="<%= data.cat %>"><%= data.cat %></option>
+                            <% for(var i=0; i<cats.length; i++){ %>
+                                <option value="<%= cats[i].title %>"><%= cats[i].title %></option>
+                            <% } %>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputSubject">文章标题</label>
+                            <input type="text" name="title" placeholder="标题" id="inputSubject" class="form-control" value="<%= data.title %>">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputCover">文章封面</label>
+                            <input type="file" name="cover" id="inputCover" class="" value="<%= data.cover %>">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputSummary">文章摘要</label>
+                            <textarea name="summary" placeholder="摘要" id="inputSummary" class="form-control"><%= data.summary %></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputContent">文章内容</label>
+                            <textarea name="content" class="form-control" id="inputContent" cols="30" placeholder="内容" rows="10"><%= data.content %></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputTag">文章标签</label>
+                            <div class="row">
+                                <% for(var i=0; i<tags.length; i++){ %>
+                                <div class="col-lg-1 col-md-2 col-xs-6 col-sm-2">
+                                    <input type="checkbox" value="<%= tags[i].title %>" id="<%= 'cb'+i %>" name="tag">
+                                    <label for="<%= 'cb'+i %>"><%= tags[i].title %></label>
+                                </div>
+                                <% } %>
+                            </div>
+                        </div>
+                        <input type="hidden" value="<%= data._id %>" name="id" >
+
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer clearfix">
+                        <button class="btn btn-primary" type="submit" name="submit" value="publish">更新</button>
+                    </div>
+                    <!-- /.box-footer -->
+                </form>
+
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+
+</section>
+<!-- /.content -->
+<%include footer %>

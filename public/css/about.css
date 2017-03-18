@@ -1,0 +1,129 @@
+html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p{
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #e0e0e0;
+    font-family: 'Helvetica Neue', Helvetica, 'Lucida Grande', Arial, 'Hiragino Sans GB', 微软雅黑, 'WenQuanYi Micro Hei', STHeiti, SimSun, sans-serif;
+    min-width: 1080px;
+}
+ul,li {
+    list-style: none;
+}
+.container {
+    position: relative;
+    margin: 10px auto;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+    width: 1060px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+.sidebar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 300px;
+    padding: 15px 20px 10000px;
+    background-color: #415877;
+    color: #fff;
+    line-height: 1.5;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: -10000px;
+}
+.title {
+    margin: 25px 0 10px;
+    text-align: center;
+}
+.title img {
+    display: block;
+    margin: 0 auto 15px;
+    width: 120px;
+}
+.title h1 {
+    position: relative;
+    font-size: 34px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+.title p{
+    font-size: 14px;
+}
+.note {
+    margin-top: 30px;
+    padding: 0 10px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+}
+.side-info li {
+    padding-top: 20px;
+    font-size: 14px;
+}
+.side-info h2{
+    font-size: 18px;
+    color: #b6c0ce;
+    line-height: 40px;
+}
+.side-info .cont{
+    margin-left: 20px;
+}
+.skill .cont{
+    margin-bottom: 7px;
+}
+.skill-name {
+    display: inline-block;
+    font-size: 14px;
+    width: 70px;
+    text-align: right;
+}
+.skill-bar-wrap {
+    display: inline-block;
+    position: relative;
+    top: 3px;
+    height: 14px;
+    width: 150px;
+    background-color: #042029;
+    border-radius: 20px;
+}
+.skill-bar {
+    height: 14px;
+    background: #fff;
+    border-radius: 20px 0 0 20px;
+}
+.main {
+    position: relative;
+    left: 300px;
+    width: 720px;
+    padding: 15px 20px 10000px;
+    background: #f0f2f1;
+    margin-bottom: -10000px;
+}
+.main a {
+    color: #415877;
+}
+.main h2{
+    padding-top: 20px;
+    font-size: 24px;
+    color: #415877;
+    line-height: 30px;
+    border-bottom: 1px solid #415877;
+    margin: 0 0 15px -5px;
+}
+.main-info p{
+    font-size: 16px;
+    line-height: 27px;
+}
+.main-exp .item{
+    margin-bottom: 20px;
+}
+.main-exp .item h3{
+    line-height: 30px;
+    font-size: 18px;
+    color: #000;
+    margin-bottom: 10px;
+}
+.main-exp .item span{
+    margin-right: 30px;
+}
