@@ -30,7 +30,7 @@
 
 	mongod.exe --dbpath yourfilename
 
-(2)创建 `blog` 数据库并设置后台管理员账号密码
+(2)创建 `blog` 数据库并设置后台管理员账号密码。切换到`bin`目录下，运行`mongo`，输入下面命令
 
 	use blog
 	db.createCollection("user")
